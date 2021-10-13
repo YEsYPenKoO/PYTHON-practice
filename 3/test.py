@@ -1,5 +1,5 @@
 
-print("Here you can check if any phrase you input can be composed out of the other one, by writting down two.")
+# print("Here you can check if any phrase you input can be composed out of the other one, by writting down two.")
 
 # while True:
    
@@ -39,27 +39,43 @@ print("Here you can check if any phrase you input can be composed out of the oth
 
 # print('Goodbye')
 
+# a = {'A': 1, 'E': 1, 'I': 1, 'L': 1, 'N': 1, 'O': 1, 'R': 1, 'S': 1, 'T': 1, 'U': 1, 'D': 2, 'G': 2,
+#      'B': 3, 'C': 3, 'M': 3, 'P': 3, 'F': 4, 'H': 4, 'V': 4, 'W': 4, 'Y': 4, 'K': 5, 'J': 8, 'X': 8,
+#      'Q': 1, 'Z': 1}
 
-# while True:
-#     phr1 = []
-#     phr2 = []
-#     x = str(input("Enter the first phrase: "))
-#     alpha1 = "".join(p for p in x if p.isalpha())
-#     #print(alpha1)
-#     p1l = list(alpha1.lower())
-#     p1u = list(alpha1.upper())
-#     phr1 = p1l + p1u
-#     uni1 = set(phr1)
-#     #print(uni1)
-#     y = str(input("Enter the second phrase: "))
-#     alpha2 = "".join(t for t in y if t.isalpha())
-#     p2l = list(alpha2.lower())
-#     p2u = list(alpha2.upper())
-#     phr2 = p2l + p2u
-#     uni2 = set(phr2)
-#     #print(uni2)
-#     inter = len(uni2-uni1)
-#     if inter == 0:
-#         print('+++')
-#     else:
-#         print('---')
+# letter = (input("Введіть слово/слова: ").upper()).split()
+# result = []
+# for i in range(len(letter)):
+#     score = 0
+#     for j in letter[i]:
+#         if j in a:
+#             score += a[j]
+#     result += [score]
+
+# print(result)
+
+word = (input('Input some words: ').upper())
+
+l = {'A':1,'E':1,'I':1,'L':1,'N':1,'O':1,'R':1,'S':1,'T':1,'U':1,
+        'D':2,'G':2,
+        'B':3,'C':3,'M':3,'P':3,
+        'F':4,'H':4,'V':4,'W':4,'Y':4,
+        'K':5,
+        'J':8,'X':8,
+        'Q':10,'Z':10}
+
+word_1 = word.split()
+
+p_all =[]
+p = 0
+
+for i in range(len(word_1)):
+    for letter in word_1[i]:
+        if letter in l:
+            p += l[letter]
+    p_all += [p]
+
+print(p_all)
+
+
+
